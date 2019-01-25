@@ -1,0 +1,9 @@
+Differences between Python 2 and Python 3
+
+1. Certain libraries are made specifically for python2 and not for python3 so the version really matters there.
+
+2. The way integer division is handled is entirely different. In python2 if you were to, for example, do 5 / 2 it would round down to 2 because it wanted to give an int as an output. In python3, it will automatically convert the result to a float and correctly answer 2.5.
+
+3. Strings are encoded in unicode instead of ASCII by default in python3.
+
+4. As a minor change, print requires the argument in parenthesis in python3 but not in python2.
