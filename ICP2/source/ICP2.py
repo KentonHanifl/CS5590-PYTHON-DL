@@ -29,6 +29,9 @@ class Stack:
         except:
             return "Nothing in the stack"
 
+    def getContents(self):
+        return self.stack
+
 
 class Queue:
     '''
@@ -54,6 +57,9 @@ class Queue:
             return ret
         except:
             return "Nothing in the queue"
+
+    def getContents(self):
+        return self.queue
 
 
 def changeCase(string):
@@ -142,7 +148,7 @@ def stackLoop():
     stack = Stack()
     cont = True
     while(cont):
-        choice = input("\n1: Print stack.top()\n2: Call stack.push()\n3: Call stack.pop()\n4: Quit")
+        choice = input("\n1: Print stack.top()\n2: Call stack.push()\n3: Call stack.pop()\n4: Print contents of Stack\n5: Quit")
         if choice[0] == "1":
             print(stack.top())
         elif choice[0] == "2":
@@ -150,6 +156,8 @@ def stackLoop():
             stack.push(push)
         elif choice[0] == "3":
             print(stack.pop())
+        elif choice[0] == "4":
+            print(stack.getContents())
         else:
             cont = False
 
@@ -158,7 +166,7 @@ def queueLoop():
     queue = Queue()
     cont = True
     while(cont):
-        choice = input("\n1: Print queue.front()\n2: Call queue.enqueue()\n3: Call queue.dequeue()\n4: Quit")
+        choice = input("\n1: Print queue.front()\n2: Call queue.enqueue()\n3: Call queue.dequeue()\n4: Print contents of Queue\n5: Quit")
         if choice[0] == "1":
             print(queue.front())
         elif choice[0] == "2":
@@ -166,6 +174,8 @@ def queueLoop():
             queue.enqueue(enqueue)
         elif choice[0] == "3":
             print(queue.dequeue())
+        elif choice[0] == "4":
+            print(queue.getContents())
         else:
             cont = False
 
