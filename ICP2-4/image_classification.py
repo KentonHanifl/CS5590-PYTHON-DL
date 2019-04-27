@@ -22,10 +22,10 @@ from keras.models import model_from_json
 K.set_image_dim_ordering('th')
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
 #reduce training and test sets
-X_train = X_train[:2000]
-y_train = y_train[:2000]
-X_test = X_test[:1000]
-y_test = y_test[:1000]
+X_train = X_train[:6000]
+y_train = y_train[:6000]
+X_test = X_test[:3000]
+y_test = y_test[:3000]
 # normalize inputs from 0-255 to 0.0-1.0
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
@@ -44,6 +44,7 @@ try:
     model = model_from_json(loaded_model_json)
     # load weights into new model
     model.load_weights("model.h5")
+    
     epochs = 25
     lrate = 0.01
     decay = lrate/epochs
@@ -80,7 +81,7 @@ except Exception as e:
     # Compile model
     tbCallBack=TensorBoard(log_dir='./Graph',histogram_freq=0,write_graph=True, write_images=True) 
 
-    epochs = 25
+    epochs = 40
     lrate = 0.01
     decay = lrate/epochs
     sgd = SGD(lr=lrate, momentum=0.9, decay=decay, nesterov=False)
