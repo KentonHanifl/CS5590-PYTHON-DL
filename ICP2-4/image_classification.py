@@ -21,6 +21,7 @@ from keras.models import model_from_json
 (trash, garbage), (testims, testlabels) = cifar10.load_data()
 K.set_image_dim_ordering('th')
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
+input("done")
 #reduce training and test sets
 X_train = X_train[:6000]
 y_train = y_train[:6000]
@@ -35,7 +36,7 @@ X_test = X_test / 255.0
 y_train = np_utils.to_categorical(y_train)
 y_test = np_utils.to_categorical(y_test)
 num_classes = y_test.shape[1]
-
+input("done")
 try:
     # load json and create model
     json_file = open('model.json', 'r')

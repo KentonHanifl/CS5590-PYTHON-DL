@@ -1,0 +1,1 @@
+tensorboard --logdir C:\Users\Kenton\Desktop\School\PythonDeepLearning\CS5590-PYTHON-DL-LAB3\Graph
